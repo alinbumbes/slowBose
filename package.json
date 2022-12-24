@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/alinbumbes/slowBose#readme",
   "devDependencies": {
-    "bootstrap": "^5.1.3",
-    "bootstrap-icons": "^1.8.0"
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2"
   }
 }
