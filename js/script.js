@@ -40,3 +40,9 @@ console.log(alinClass);
 console.log(alinClass.constructor.name);
 
 alinClass.hey();
+
+
+function fuckIt(a, b){
+  return a+b;
+}
+export {fuckIt};
