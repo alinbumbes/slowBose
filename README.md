@@ -1,86 +1,82 @@
-# slowBose
-making my way downtown, just makin my way through the crowd 
-ro22 project to learn GIT
-
-# Getting started
-
-add in .gitconfig these commands adjusting for your own user name 
-
-[core]
-	editor = \"C:\\Users\\iamSuchaUser\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
-[user]
-	email = iamemail@gmail.com
-	name = John Doe
-[alias]
-    co = checkout
-    st = status
-    br = branch
-    lga = log --graph --oneline --decorate
+## Description
+simple app layout that has light / dark theme switcher, that has no css/js dependencies.
 
 
+## Installation
+```bash
 
-# comenzi de git utile :
+npm install
 
- git config --global user.name "Your Name"
- git config --global user.email "youremail@yourdomain.com"
-----adauga user name si user email(cu care te-ai logat in gitlab) in .gitconfig ( aflat la C:/users/STUDENTUL/.gitconfig)
+``` 
 
 
-git clone https://gitlab.com/alinbumbes/sass-course-gitlab.git   
-----( sau orice alt link de repository din gitlab, github, etc)
-----pentru a descarca pe calculatorul personal un proiect din github/gitlab/bitbucket sau orice alt repository online. 
+#### comenzi de git utile :
 
-git status
-----verifica statusul unui repository
+## git config --global user.name "Your Name"
+## git config --global user.email "youremail@yourdomain.com"
+adauga user name si user email(cu care te-ai logat in gitlab) in .gitconfig ( aflat la C:/users/STUDENTUL/.gitconfig)
 
-git add -A      (sau git add . )
-----adauga toate fisierele noi (untracked files) in lista de modificari (changes)
 
- git commit -m "in ghilimele punem mesajul de commit"
-----pentru a impacheta toate modificarile noastre intr-un COMMIT. Orice modificare in proiect trebuie salvata si trimisa la
-server intr-un commit.
+## git clone https://gitlab.com/alinbumbes/sass-course-gitlab.git   
+( sau orice alt link de repository din gitlab, github, etc)
+pentru a descarca pe calculatorul personal un proiect din github/gitlab/bitbucket sau orice alt repository online. 
 
- git push
-----ca sa trimitem modificarile din commit-ul nostru catre server ( origin/main)
+## git status
+verifica statusul unui repository
 
- git log --graph --oneline --decorate
-----va ofera informatii intr-o reprezentare grafica despre commit urile de pe un branch
+## git add -A      (sau git add . )
+adauga toate fisierele noi (untracked files) in lista de modificari (changes)
 
- git fetch -all
-----pentru a aduce noile branch uri la tine pe calculator
+## git commit -m "in ghilimele punem mesajul de commit"
+pentru a impacheta toate modificarile noastre intr-un COMMIT. Orice modificare in proiect trebuie salvata si trimisa la server intr-un commit.
 
- git branch -all
-----iti returneaza lista completa de branch uri disponibile in repository ul tau curent.
+## git push
+ca sa trimitem modificarile din commit-ul nostru catre server ( origin/main)
 
- git pull
-----iti ia ultimele modificari de pe branch ul pe care il urmaresti  ( tu ai main, iar pe server este origin/main)
+## git log --graph --oneline --decorate
+va ofera informatii intr-o reprezentare grafica despre commit urile de pe un branch
 
- git reset --hard
-----reseteaza toate modificarile de pe branchul nostru local, fara modificarile deja intr-un commit
+## git fetch -all
+pentru a aduce noile branch uri la tine pe calculator
 
- git reset --hard HEAD~1
-----STERGE IN MOD IREVOCABIL ultimul commit facut local si te intoarce la statiul initial 
+## git branch -all
+iti returneaza lista completa de branch uri disponibile in repository ul tau curent.
 
- git clean -f
-----sterge fisierele noi care nu sunt adaugate in modificari ( untracked)
+## git pull
+iti ia ultimele modificari de pe branch ul pe care il urmaresti  ( tu ai main, iar pe server este origin/main)
 
- git fetch 
-----aducem pe local toate branch urile noi
+## git reset --hard
+reseteaza toate modificarile de pe branchul nostru local, fara modificarile deja intr-un commit
 
- git checkout -b <nume-branch>  
-----creem un branch nou <nume-branch> si ne si mutam pe el  
+## git reset --hard HEAD~1
+STERGE IN MOD IREVOCABIL ultimul commit facut local si te intoarce la statiul initial 
 
- git push -u origin <nume-branch-cum-vrem-sa-fie-pe-server-origin> 
-----dupa ce salvam modificarile de pe branch ul nostru in commit, putem crea un branch cu acelasi nume pe server (origin) ca sa fie public
+## git clean -f
+sterge fisierele noi care nu sunt adaugate in modificari ( untracked)
 
-  git merge <nume-branch>
-----ne aflam pe un branch, daca rulam aceasta comanda, ne va aduce modificarile de pe <nume-branch> pe branch ul nostru curent. 
-----nu poti da merge la un branch pe care te si afli. trebuie sa fii pe un alt branch decat <nume-branch>
+## git config --global user.name "Your Name"
+## git config --global user.email "youremail@yourdomain.com"
+adauga user name si user email(cu care te-ai logat in gitlab) in .gitconfig ( aflat la C:/users/STUDENTUL/.gitconfig)
 
- git push -d <remote_name> <branchname>
- git branch -D <branchname>
- push -d 
-----sterge branch ul de pe origin ( remote branch ) iar branch -D sterge branch ul local.
+## git fetch 
+aducem pe local toate branch urile noi
 
- git branch -a
-----afisaza toate branch-urile disponibile dintr un repository
+## git checkout -b <nume-branch>  
+creem un branch nou <nume-branch> si ne si mutam pe el  
+
+## git push -u origin <nume-branch-cum-vrem-sa-fie-pe-server-origin> 
+dupa ce salvam modificarile de pe branch ul nostru in commit, putem crea un branch cu acelasi nume pe server (origin) ca sa fie public
+
+## ## git merge <nume-branch>
+ne aflam pe un branch, daca rulam aceasta comanda, ne va aduce modificarile de pe <nume-branch> pe branch ul nostru curent. 
+nu poti da merge la un branch pe care te si afli. trebuie sa fii pe un alt branch decat <nume-branch>
+
+## git push -d <remote_name> <branchname>
+## git branch -D <branchname>
+## push -d 
+sterge branch ul de pe origin ( remote branch ) iar branch -D sterge branch ul local.
+
+## git branch -a
+afisaza toate branch-urile disponibile dintr un repository
+
+...

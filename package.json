@@ -1,29 +1,28 @@
 {
   "name": "slowbose",
   "version": "1.0.0",
-  "description": "porfolio app",
-  "main": "app.js",
+  "description": "simple app layout that has light / dark theme switcher, that has no css/js dependencies.",
+  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "postcss src/input.css -o style.min.css",
+    "watch:css": "postcss src/input.css -o style.min.css -w"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alinbumbes/slowBose.git"
   },
-  "keywords": [
-    "slowbose",
-    "slow",
-    "bose",
-    "porfolio"
-  ],
-  "author": "A!iN",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alinbumbes/slowBose/issues"
+    "url": "https://github.com/alinbumbes/vanillaLightDarkStarterKit/issues"
   },
-  "homepage": "https://github.com/alinbumbes/slowBose#readme",
+  "homepage": "https://github.com/alinbumbes/vanillaLightDarkStarterKit#readme",
   "devDependencies": {
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.2"
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0"
   }
 }

@@ -1,0 +1,13 @@
+/* basic root vars reset and layout */
+@import "css-part/var.css";
+@import "css-part/layout.css";
+@import "css-part/theme.css";
+
+/* components */
+
+@import "css-part/header.css";
+@import "css-part/footer.css";
+@import "css-part/card.css";
+
+/* utilities */
+@import "css-part/utils.css";

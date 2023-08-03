@@ -1,0 +1,53 @@
+/* theme switcher */
+
+:root:has(#theme-switcher:checked) {
+    /* dark theme */
+    --theme: 'dark';
+    --color-body: #fff;
+    --dark0-or-light100: 0%;
+    --svg-lightness: 50%;
+}
+
+.theme-switcher {
+    &:focus-visible {
+        outline: 2px solid #fff;
+    }
+
+    & label {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+    }
+
+    & svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+/* theme switcher from the header */
+
+#theme-switcher:checked+label {
+    & :first-child {
+        fill: red;
+        display: inline-block
+    }
+
+    & :last-child {
+        display: none;
+    }
+}
+
+
+#theme-switcher:not(:checked)+label {
+    & :first-child {
+        display: none;
+    }
+
+    & :last-child {
+        display: inline-block;
+        fill: green;
+    }
+}

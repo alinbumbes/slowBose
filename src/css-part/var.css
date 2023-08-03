@@ -1,0 +1,23 @@
+:root {
+  /* light theme */
+  --theme: 'light';
+  --color-body: #000;
+  --dark0-or-light100: 100%;
+  --bg-main: hsl(none 0% 100% / 33%);
+  --color-header: var(--color-body);
+  --bg-header: hsl(0deg 0% var(--dark0-or-light100) / 33%);
+  --color-footer: var(--color-body);
+  --bg-footer: var(--bg-header);
+  --bg-color-overlay: hsl(0 0% var(--dark0-or-light100) / 33%);
+  --svg-gradient-base: 278deg;
+  --svg-lightness: 33%;
+
+  --bg-card: hsl(0deg 0% var(--dark0-or-light100) / 10%);
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+
+  --clr-01: #d439f5;
+  --clr-02: #f5c048;
+
+}

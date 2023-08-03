@@ -2,19 +2,138 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlowBose</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <script  type="module" src="bundle.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.min.css" />
+  <script type="module" src="script.js"></script>
 </head>
 
-<body>
+<body class="ab-layout">
+  <main>
+    <!-- make a svg background fill the entire viewport as fixed element with js window.width, window.height auto-margins to center it -->
+    <div class="svg-bg-container bg-viewport-overlay">
+      <svg class="svg-bg-colors" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1600 800">
+        <rect fill="#D648FF" width="1600" height="800" />
+        <g>
+          <path
+            d="M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z" />
+          <path
+            d="M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z" />
+          <path
+            d="M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z" />
+          <path
+            d="M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z" />
+          <path
+            d="M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z" />
+          <path
+            d="M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z" />
+          <path
+            d="M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z" />
+          <path
+            d="M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z" />
+          <path
+            d="M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z" />
+          <path d="M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z" />
+        </g>
+      </svg>
+    </div>
 
-    fac eu???
+    <header class="top">
+      <div class="logo g-2 d-flex align-items-center">
+        <svg class="logo-svg" width="96" height="48" viewBox="0 0 96 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_1_2)">
+            <path class="logo-svg_fill1 logo-svg_stroke1"
+              d="M36.3538 8.49136L35.4877 8.49136L35.9208 9.24136L52.8553 38.5728L53.2883 39.3228L53.7213 38.5728L70.6559 9.24136L71.0889 8.49136L70.2228 8.49136L36.3538 8.49136Z"
+              fill="#F5B539" stroke="#F5B539" />
 
+            <circle class="logo-svg_fill2 logo-svg_stroke2" cx="53.2883" cy="18.7685" r="9.27716"
+              transform="rotate(-60 53.2883 18.7685)" fill="#F54848" stroke="#F5B539" />
+
+            <path class="logo-svg_fill2 logo-svg_stroke2"
+              d="M27.9873 9.64136L27.5543 8.89136L27.1213 9.64136L10.1868 38.9728L9.75376 39.7228H10.6198H44.4889H45.3549L44.9219 38.9728L27.9873 9.64136Z"
+              fill="#F54848" stroke="#F54848" />
+
+            <path class="logo-svg_fill2 logo-svg_stroke2"
+              d="M79.0543 9.9V8.03397L78.1213 9.65L61.1868 38.9815L60.7538 39.7315H61.6198H78.5543H79.0543V39.2315V9.9Z"
+              fill="#F54848" stroke="#F54848" />
+
+            <circle class="logo-svg_fill1 logo-svg_stroke1" cx="27.5543" cy="29.4457" r="9.27716" fill="#F5B539"
+              stroke="#F54848" />
+
+            <circle class="logo-svg_fill1 logo-svg_stroke2" cx="78.7772" cy="28.7772" r="9.27716" fill="#F5B539"
+              stroke="#F54848" />
+          </g>
+          <defs>
+            <clipPath id="clip0_1_2">
+              <rect width="96" height="48" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <div class="d-flex flex-col">
+          <span class="no-wrap">Slowbose</span>
+          <span class="no-wrap sub-title">.dev .work .inc</span>
+        </div>
+      </div>
+      <ul class="top-nav d-flex justify-content-end ul-reset w-100">
+        <li><a class="d-flex" href="#">home</a></li>
+        <li><a class="d-flex" href="#">stuff</a></li>
+        <li><a class="d-flex" href="#">about</a></li>
+      </ul>
+      <div class="theme-switcher">
+
+        <input type="checkbox" id="theme-switcher" hidden>
+        <label class="pointer" for="theme-switcher">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars"
+            viewBox="0 0 16 16">
+            <path
+              d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+            <path
+              d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun"
+            viewBox="0 0 16 16">
+            <path
+              d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+          </svg>
+
+        </label>
+      </div>
+    </header>
+    <h1 class="h1 txt-primary">Hello and welcome</h1>
+    <p class="fs-lg">
+      In this project I aim to achieve a simple css only solution for dark/light theme switcher, among other things
+    </p>
+
+    <div class="card">
+      <h2 class="count-header">implement basic header menu nav</h2>
+      <p>
+        create navbar at top, make it look nice regardless of light/dark theme. add links to the top, to be
+        continued...
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>create light/dark theme switcher with local storage recall of preferrences and prefers system theme</h2>
+      <p>
+        light/dark theme: explore more options, either by injecting a list of variables from a dark-theme.json file to
+        load in the head > style tag, or just have it all in the main css file and just change the value of the
+        css-variables based on that state. also save that value to localStorage, recall it on page load, and check if
+        the system prefers dark theme, if so, set the theme to dark. to be continued...
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>move entire project to the slowbose project, so it deploys with netlify on slowbose.netlify.app</h2>
+      <p>
+        also while you're there, create a contact form, add the fucking https://docs.netlify.com/forms/setup/ option
+        in netlify so that form autodetection and submission happens automatically, yeah, test that shit out
+      </p>
+    </div>
+  </main>
+  <footer class="bottom d-flex flex-space-between">footer data</footer>
 </body>
 
 </html>

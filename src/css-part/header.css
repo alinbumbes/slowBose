@@ -1,0 +1,46 @@
+header.top {
+    display: flex;
+    background-color: var(--bg-footer);
+    align-items: center;
+    padding: 0 .5rem;
+    color: var(--color-header);
+}
+
+.top-nav>li>a {
+    text-decoration: none;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--color-body);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: system-ui;
+
+    .sub-title {
+        font-size: 0.75rem;
+        font-weight: normal;
+    }
+}
+
+
+
+.logo-svg_fill1 {
+    fill: var(--clr-01);
+}
+
+
+.logo-svg_fill2 {
+    fill: var(--clr-02);
+}
+
+
+.logo-svg_stroke1 {
+    stroke: var(--clr-01);
+}
+
+
+.logo-svg_stroke2 {
+    stroke: var(--clr-02);
+}
