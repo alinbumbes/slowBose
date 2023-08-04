@@ -13,12 +13,12 @@
     "url": "git+https://github.com/alinbumbes/slowBose.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "CiungaLunga",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alinbumbes/vanillaLightDarkStarterKit/issues"
+    "url": "https://github.com/alinbumbes/slowBose/issues"
   },
-  "homepage": "https://github.com/alinbumbes/vanillaLightDarkStarterKit#readme",
+  "homepage": "https://github.com/alinbumbes/slowBose#readme",
   "devDependencies": {
     "cssnano": "^6.0.1",
     "postcss": "^8.4.27",
