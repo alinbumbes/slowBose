@@ -101,6 +101,8 @@ body {
     --color-body: #fff;
     --dark0-or-light100: 0%;
     --svg-lightness: 50%;
+    --svg-gradient-base: 78deg;
+    transition: --svg-gradient-base 2s ease-in-out;
 }
 .theme-switcher {
     &:focus-visible {
