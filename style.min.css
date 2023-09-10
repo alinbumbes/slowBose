@@ -93,10 +93,8 @@ header.top {
     font-size: 1.1rem;
 }
 /* components */
-header.top {
-    display: flex;
-    align-items: center;
-    padding: 0 .5rem;
+header.header-top {
+    padding: 0;
 }
 .top-nav>li>a {
     text-decoration: none;
@@ -104,15 +102,85 @@ header.top {
     font-size: 1.1rem;
 }
 .logo {
-filter: invert(var(--invert));
+    filter: invert(var(--invert));
 }
-footer.bottom {
+.hamburger {
+    width: 2rem;
+    position: relative;
+
+    &,
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        height: 0.2rem;
+        transition: transform .5s ease-out;
+        border-radius: 10px;
+        background-color: var(--color-body);
+
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        width: 100%;
+    }
+
+    &:before {
+        top: -0.5rem;
+    }
+
+    &:after {
+        top: 0.5rem;
+    }
+
+}
+.hamburger {
+    transition: background-color .5rem ease-out, transform .5s ease-out;
+}
+.toggle-menu-hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 1.5rem;
+}
+:root:has(#toggle-menu:checked) .toggle-menu-hamburger {
+
+    & .hamburger {
+        background-color: transparent;
+    }
+
+    & .hamburger:before {
+        transform: translateY(0.5rem) rotate(45deg);
+    }
+
+    & .hamburger:after {
+        transform: translateY(-0.5rem) rotate(-45deg);
+    }
+}
+:root:has(#toggle-menu:checked) .top-nav {
+    display: block;
+}
+:root:has(#toggle-menu:not(checked)) .top-nav {
+    display: none;
+}
+/* 
+    --hamburger-shadow: #ffcc00;
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.3s ease-in-out;
+    
+    &:hover, &:hover::before, &:hover::after {
+        box-shadow: 0 -0.5rem 0 1rem var(--hamburger-shadow), 0 0.5rem 0 1rem var(--hamburger-shadow);
+    }
+*/
+footer.footer-bottom {
   padding: 2rem 0.5rem;
 }
 .card {
-    background-color: rgb(23,23,23);
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0 0, 0, 1));
-    border: 1px solid rgb(223, 223, 223);
+    background-color: color-mix(in hsl, hsl(0 0% 50% / 1) 20%, var(--body-bg));
+    background-image: linear-gradient(#ffffff00, var(--body-bg));
+    border: 1px solid var(--color-body);
     border-radius: 26px;
     cursor: pointer;
     padding: 10px 40px;
@@ -145,6 +213,9 @@ footer.bottom {
 .align-items-center {
   align-items: center;
 }
+.flex-extend {
+  flex: 1 1 auto;
+}
 .g-1 {
   gap: 0.25rem;
 }
@@ -170,4 +241,11 @@ footer.bottom {
 }
 .pointer {
   cursor: pointer;
+}
+.py-3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.pb-3 {
+  padding-bottom: 1rem;
 }

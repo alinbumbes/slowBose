@@ -30,10 +30,14 @@
   justify-content: space-between;
 }
 
+
 .align-items-center {
   align-items: center;
 }
 
+.flex-extend {
+  flex: 1 1 auto;
+}
 .g-1 {
   gap: 0.25rem;
 }
@@ -63,6 +67,15 @@
 .backdrop-blur {
   backdrop-filter: blur(15px);
 }
+
 .pointer {
   cursor: pointer;
+}
+.py-3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pb-3 {
+  padding-bottom: 1rem;
 }

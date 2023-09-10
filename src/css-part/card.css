@@ -1,7 +1,7 @@
 .card {
-    background-color: rgb(23,23,23);
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0 0, 0, 1));
-    border: 1px solid rgb(223, 223, 223);
+    background-color: color-mix(in hsl, hsl(0 0% 50% / 1) 20%, var(--body-bg));
+    background-image: linear-gradient(#ffffff00, var(--body-bg));
+    border: 1px solid var(--color-body);
     border-radius: 26px;
     cursor: pointer;
     padding: 10px 40px;
