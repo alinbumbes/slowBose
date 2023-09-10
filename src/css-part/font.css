@@ -1,0 +1,12 @@
+@font-face {
+    font-family: SamsungOne;
+    font-weight: 500;
+    src: url(https://v3.account.samsung.com/assets/fonts/SamsungOne-500_v2.0.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: SamsungOne;
+    font-weight: 700;
+    src: url(https://v3.account.samsung.com/assets/fonts/SamsungOne-700_v2.0.woff) format("woff");
+  }
+  

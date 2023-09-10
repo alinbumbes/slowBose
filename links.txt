@@ -1,0 +1,38 @@
+fonts: 
+
+https://v3.account.samsung.com/assets/fonts/SamsungOne-500_v2.0.woff
+https://v3.account.samsung.com/assets/fonts/SamsungOne-700_v2.0.woff
+
+imagini:
+
+samsung logo
+https://v3.account.samsung.com/static/media/logo-samsung.4881f8d4a2fbde33b33bf9e4548242e4.svg
+https://v3.account.samsung.com/static/media/logo-samsung.4881f8d4a2fbde33b33bf9e4548242e4.svg
+
+health
+https://terms.samsungconsent.com/package/com.sec.android.app.shealth/icon.png
+
+browser
+    https://terms.samsungconsent.com/package/com.sec.android.app.sbrowser/icon.png
+
+samsung cloud
+https://terms.samsungconsent.com/package/com.samsung.android.scloud/icon.png
+
+Smart things
+https://terms.samsungconsent.com/package/com.samsung.android.oneconnect/icon.png
+
+calling service
+https://terms.samsungconsent.com/package/com.samsung.android.mdecservice/icon.png
+
+geofence
+https://terms.samsungconsent.com/package/com.samsung.android.ipsgeofence/icon.png
+
+fmm
+https://terms.samsungconsent.com/package/com.samsung.android.fmm/icon.png
+
+bixby
+https://terms.samsungconsent.com/package/com.samsung.android.bixby.agent/icon.png
+
+watch manager
+https://terms.samsungconsent.com/package/com.samsung.android.app.watchmanager/icon.png
+

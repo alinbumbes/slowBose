@@ -1,17 +1,16 @@
 /* theme switcher */
-
 :root:has(#theme-switcher:checked) {
     /* dark theme */
-    --theme: 'dark';
+    --body-bg: #000;
     --color-body: #fff;
-    --dark0-or-light100: 0%;
-    --svg-lightness: 50%;
-    --svg-gradient-base: 78deg;
-    transition: --svg-gradient-base 2s ease-in-out;
+    --invert: 1;
 }
 
 .theme-switcher {
-    &:focus-visible {
+
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
         outline: 2px solid #fff;
     }
 
@@ -27,10 +26,7 @@
     }
 }
 
-
-
 /* theme switcher from the header */
-
 #theme-switcher:checked+label {
     & :first-child {
         fill: red;
@@ -42,7 +38,6 @@
     }
 }
 
-
 #theme-switcher:not(:checked)+label {
     & :first-child {
         display: none;
@@ -52,4 +47,17 @@
         display: inline-block;
         fill: green;
     }
+}
+
+/* components */
+header.top {
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.top-nav>li>a {
+    text-decoration: none;
+    padding: 1.5rem;
+    font-size: 1.1rem;
 }
