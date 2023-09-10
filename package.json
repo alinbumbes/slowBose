@@ -1,7 +1,7 @@
 {
   "name": "slowbose",
   "version": "1.0.0",
-  "description": "simple app layout that has light / dark theme switcher, that has no css/js dependencies.",
+  "description": "making a clone of the Samsung account dashboard page",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

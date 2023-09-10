@@ -4,8 +4,9 @@ html {
 
 body {
   margin: 0;
+  background-color: var(--body-bg);
   color: var(--color-body);
-    font-family: SamsungOne, Arial, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+  font-family: SamsungOne, Arial, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
 }
 
 .ab-layout {
@@ -13,4 +14,10 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
   min-height: 100dvh;
+}
+
+.wrap {
+  width: auto;
+  margin: 0 auto;
+  padding:0 15px;
 }

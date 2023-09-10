@@ -1,207 +1,173 @@
+/* basic root vars reset and layout */
 :root {
   --body-bg: #fff;
   --color-body: #000;
   --invert: 0;
 }
-/*------------------------------------*\
-/* set font import */
-
-
 html {
-  margin: 0;
   display: flow-root;
-  color: hsl(var(--dark-or-light), 0%, 100%);
-  
-
 }
-
 body {
   margin: 0;
   background-color: var(--body-bg);
   color: var(--color-body);
+  font-family: SamsungOne, Arial, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
 }
-
 .ab-layout {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
-  height: 100dvh;
+  min-height: 100dvh;
 }
-
-
+.wrap {
+  width: auto;
+  margin: 0 auto;
+  padding:0 15px;
+}
+@font-face {
+    font-family: SamsungOne;
+    font-weight: 500;
+    src: url(https://v3.account.samsung.com/assets/fonts/SamsungOne-500_v2.0.woff) format("woff");
+  }
+@font-face {
+    font-family: SamsungOne;
+    font-weight: 700;
+    src: url(https://v3.account.samsung.com/assets/fonts/SamsungOne-700_v2.0.woff) format("woff");
+  }
 /* theme switcher */
 :root:has(#theme-switcher:checked) {
-  /* dark theme */
-  --body-bg: #000;
-  --color-body: #fff;
-  --invert: 1;
+    /* dark theme */
+    --body-bg: #000;
+    --color-body: #fff;
+    --invert: 1;
 }
-
 .theme-switcher {
-  &:focus-visible {
-    outline: 2px solid #fff;
-  }
 
-  & label {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: block;
-  }
+    &:focus-visible,
+    &:focus-within,
+    &:focus {
+        outline: 2px solid #fff;
+    }
 
-  & svg {
-    width: 100%;
-    height: 100%;
-  }
+    & label {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+    }
+
+    & svg {
+        width: 100%;
+        height: 100%;
+    }
 }
-
 /* theme switcher from the header */
 #theme-switcher:checked+label {
-  & :first-child {
-    fill: red;
-    display: inline-block
-  }
+    & :first-child {
+        fill: red;
+        display: inline-block
+    }
 
-  & :last-child {
-    display: none;
-  }
+    & :last-child {
+        display: none;
+    }
 }
-
 #theme-switcher:not(:checked)+label {
-  & :first-child {
-    display: none;
-  }
+    & :first-child {
+        display: none;
+    }
 
-  & :last-child {
-    display: inline-block;
-    fill: green;
-  }
+    & :last-child {
+        display: inline-block;
+        fill: green;
+    }
 }
-
 /* components */
 header.top {
-  display: flex;
-  background-color: var(--bg-footer);
-  align-items: center;
-  padding: 0 .5rem;
-  color: var(--color-header);
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
 }
-
 .top-nav>li>a {
-  text-decoration: none;
-  padding: 1.5rem;
-  font-size: 1.1rem;
-  color: var(--color-body);
+    text-decoration: none;
+    padding: 1.5rem;
+    font-size: 1.1rem;
 }
-
+/* components */
+header.top {
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
+}
+.top-nav>li>a {
+    text-decoration: none;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+}
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: system-ui;
-
-  .sub-title {
-    font-size: 0.75rem;
-    font-weight: normal;
-  }
+filter: invert(var(--invert));
 }
-
-.logo-svg_fill1 {
-  fill: var(--clr-01);
-}
-
-.logo-svg_fill2 {
-  fill: var(--clr-02);
-}
-
-.logo-svg_stroke1 {
-  stroke: var(--clr-01);
-}
-
-.logo-svg_stroke2 {
-  stroke: var(--clr-02);
-}
-
 footer.bottom {
-  background-color: var(--bg-footer);
   padding: 2rem 0.5rem;
-  color: var(--color-footer);
 }
-
 .card {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px #00000059;
-  background-color: var(--bg-card);
-  backdrop-filter: blur(15px);
+    background-color: rgb(23,23,23);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0 0, 0, 1));
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 26px;
+    cursor: pointer;
+    padding: 10px 40px;
 }
-
 /* utilities */
 .txt-primary {
   color: var(--color-primary);
 }
-
 .txt-secondary {
   color: var(--color-secondary);
 }
-
 .fs-lg {
   font-size: 1.5rem;
 }
-
 .no-wrap {
   white-space: nowrap;
 }
-
 .flex-col {
   flex-direction: column;
 }
-
 .d-flex {
   display: flex;
 }
-
 .justify-content-end {
   justify-content: flex-end;
 }
-
 .flex-space-between {
   justify-content: space-between;
 }
-
 .align-items-center {
   align-items: center;
 }
-
 .g-1 {
   gap: 0.25rem;
 }
-
 .g-2 {
   gap: 0.5rem;
 }
-
 .g-3 {
   gap: 0.75rem;
 }
-
 .g-4 {
   gap: 1rem;
 }
-
 .w-100 {
   width: 100%;
 }
-
 .ul-reset {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .backdrop-blur {
   backdrop-filter: blur(15px);
 }
-
 .pointer {
   cursor: pointer;
 }
