@@ -5,4 +5,5 @@
     border-radius: 26px;
     cursor: pointer;
     padding: 10px 40px;
+    min-height: 150px;
 }
