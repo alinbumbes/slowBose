@@ -2,10 +2,14 @@ header.header-top {
     padding: 0;
 }
 
+
+
 .top-nav>li>a {
     text-decoration: none;
-    padding: 1.5rem;
-    font-size: 1.1rem;
+    padding: 0.8rem 1.3rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--color-body)
 }
 
 .logo {
@@ -56,7 +60,7 @@ header.header-top {
     height: 1.5rem;
 }
 
-:root:has(#toggle-menu:checked) .toggle-menu-hamburger {
+:root:has(.toggle-menu-input:checked) .toggle-menu-hamburger {
 
     & .hamburger {
         background-color: transparent;
@@ -72,20 +76,59 @@ header.header-top {
 }
 
 
-:root:has(#toggle-menu:checked) .top-nav {
+:root:has(.toggle-menu-input:checked) .top-nav {
     display: block;
 }
 
-:root:has(#toggle-menu:not(checked)) .top-nav {
+:root:has(.toggle-menu-input:not(checked)) .top-nav {
     display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media screen and (min-width: 900px) {
+    .mobile-only {
+        display: none;
+    }
+
+    :root:has(.toggle-menu-input:checked) .top-nav,
+    :root:has(.toggle-menu-input:not(checked)) .top-nav {
+        display: flex;
+    }
+
+    ul.top-nav {
+        margin-right: -15px;
+    }
 }
 
 
 
+.account-thumb {
+    &>img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
 
 
-
-
+.btn-account {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem 1rem;
+    background-color: transparent;
+    color: var(--color-body);
+    border: 0 solid transparent;
+    font-weight: bold;
+    margin-left: -16px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
 
 /* 
     --hamburger-shadow: #ffcc00;

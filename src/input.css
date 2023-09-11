@@ -9,6 +9,7 @@
 @import "css-part/header.css";
 @import "css-part/footer.css";
 @import "css-part/card.css";
+@import "css-part/grid.css";
 
 /* utilities */
 @import "css-part/utils.css";
