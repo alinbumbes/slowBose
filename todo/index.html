@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../style.min.css'>
+    <!-- <script src='scripts/index.js' type="module"></script> -->
+    <script src='todo.js' type="module"></script>
+
+    <style>
+        .input-box {
+            margin-bottom: 10px;
+        }
+
+        button,
+        input,
+        .list-item-box {
+            padding: 5px 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px 0 #00000021;
+
+        }
+
+        button {
+            border: 1px solid rgb(0, 156, 5);
+            background-color: #fff;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(0, 81, 128);
+                color: #fff;
+                border-color: transparent;
+                box-shadow: 0 4px 9px -1px #0000008c;
+            }
+
+            &.deleteMe {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                border-color: red;
+                color: red;
+
+
+                &:before {
+                    content: '˟';
+                    font-size: 2.3em;
+                    margin-top: -2px;
+                    margin-left: -1px;
+                    display: block;
+                }
+
+                &:hover {
+                    background-color: rgb(255, 0, 0);
+                    color: #fff;
+                }
+            }
+        }
+
+
+        input {
+            border: 1px solid rgb(214, 78, 212);
+            width: 100%
+        }
+
+        .flx {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .flx-elem {
+            flex: 1 1 auto;
+        }
+
+        section {
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .list-item-box {
+            padding: 10px 45px 10px 10px;
+            min-height: 34px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.293);
+            background-color: #fff;
+            position: relative;
+
+        }
+
+        .pm {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body class="ab-layout">
+    <main>
+
+        <section title="To Do App">
+            <h2>to do app vanilla js</h2>
+
+            <div class="box">
+                <div class="input-box flx">
+                    <input type="text" placeholder="enter your task" id="input-box" class="">
+                    <button id="add-btn">add</button>
+                    <button id="clear-btn">clear</button>
+                </div>
+
+                <div class="list-box">
+                    <ul id="list-box"> </ul>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>this is footer</footer>
+</body>
+
+</html>
