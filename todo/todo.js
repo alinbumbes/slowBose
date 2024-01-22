@@ -26,6 +26,10 @@ function clearItems() {
     console.log(list.firstChild)
   }
 }
-
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    addItem()
+  }
+})
 addBtn.addEventListener('click', addItem)
 clearBtn.addEventListener('click', clearItems)
