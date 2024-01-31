@@ -65,8 +65,20 @@
 
         input {
             border: 1px solid rgb(214, 78, 212);
-            width: 100%
+            width: 100%;
+            background-color: #fff;
+            transition: background-color 1s linear;
+
+            &.error {
+                background-color: rgb(202, 120, 120);
+                transition: background-color .1s linear;
+                &::placeholder {
+                    color:#000000;
+                    font-weight:bold;
+                }
+            }
         }
+
 
         .flx {
             display: flex;
@@ -132,7 +144,7 @@
         ul:has(li:nth-child(5)):before {
             display: inline-flex;
             align-items: center;
-            justify-content: center;    
+            justify-content: center;
             content: 'Gata, te ignorrrr!!!';
             animation: slideLeft .5s ease-in .7s;
             background-color: rgb(255, 255, 255);
