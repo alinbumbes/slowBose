@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" type="module"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <style>
+        /*Varianta lui Alin de css reset and layout */
+        :root {
+            --color-body: #000;
+            --bg-body: #f1f1f1;
+
+            --color-footer: #fff;
+            --bg-footer: #666;
+        }
+
+        html {
+            margin: 0;
+            display: flow-root;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+                sans-serif;
+        }
+
+        body {
+            margin: 0;
+            color: var(--color-body);
+        }
+
+        .ab-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            height: 100dvh;
+
+            & main {
+                background-color: var(--bg-body);
+                margin: 0;
+            }
+        }
+
+        /* custom footer */
+
+        footer {
+            background-color: var(--bg-footer);
+            color: var(--color-footer);
+        }
+    </style>
+</head>
+
+<body class="ab-layout">
+    <main>
+        <!-- start HTML -->
+
+        <div class="container">
+            <div id="cardList" class="row py-4 g-3">
+
+                <!--Start CARD. Țelul este sa faci o functie care creaza un nou card de fiecare data cand apesi pe butonul de Add -->
+
+
+                <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap align-items-center gap-3">
+                                <i class="bi bi-moon-stars fs-1"></i>
+
+                                <div>
+                                    <h5 class="card-title">Cardul 1</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">
+                                        Card subtitle
+                                    </h6>
+                                </div>
+                            </div>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulkasdlkfjashdlfkajhs dlakjdsh falskdhjfalksdjhfalsdjf of
+                                the card's content.
+                            </p>
+                            <button class="btn btn-primary">read more</button>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <div class="col d-flex align-items-center">
+                    <button id="addCard" class="btn">
+                        <i class="bi bi-plus-circle fs-1"></i>
+                    </button>
+                </div>
+
+                <!--end CARD. -->
+
+            </div>
+
+            <h1>Dom Manipulations</h1>
+
+            <p>
+                apasa pe butonul <i class="bi bi-plus-circle"></i> ca sa adaugi un card nou. </p>
+
+        </div>
+
+        <!-- end HTML -->
+
+        <script type="module">
+            'use strict'
+            // start JAVASCRIPT
+
+            const cardList = document.getElementById('cardList')
+            const addCard = document.getElementById('addCard')
+
+            function addCardToDom(e) {
+
+                if (e.target.matches("#addCard") || e.target.parentElement.matches("#addCard")) {
+                    console.log('am apasat ori pe BUTTON, ori pe I')
+
+                    // document.getElementById('addCard').parentElement.remove()
+
+                    const card = document.createElement('div')
+                    card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'col-12')
+                    card.innerHTML = `
+                
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap align-items-center gap-3">
+                                <i class="bi bi-moon-stars fs-1"></i>
+
+                                <div>
+                                    <h5 class="card-title">Cardul ${cardList.childElementCount}</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">
+                                        Card subtitle
+                                    </h6>
+                                </div>
+                            </div>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulkasdlkfjashdlfkajhs dlakjdsh falskdhjfalksdjhfalsdjf of
+                                the card's content.
+                            </p>
+                            <button class="btn btn-primary">read more</button>
+                        </div>
+                    </div>
+                `
+                    cardList.insertBefore(card, addCard.parentElement)   //adaug noul card la lista
+                }
+            }
+
+            function init() {
+                cardList.addEventListener('click', addCardToDom)
+            }
+            init();
+
+            // end JAVASCRIPT
+        </script>
+    </main>
+    <footer>
+        <div class="container py-3">
+            <div class="d-flex gap-3">
+                <i class="bi bi-c-circle"></i>
+                <span>Copyright Alin</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
