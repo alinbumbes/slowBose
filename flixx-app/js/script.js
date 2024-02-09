@@ -58,21 +58,21 @@ function highlightActiveLink() {
 
 function init() {
   switch (global.currentPage) {
-    case '/':
-    case '/index.html':
+    case '/flixx-app/':
+    case '/flixx-app/index.html':
       console.log('home')
       displayPopularMovies()
       break
 
-    case '/shows.html':
+    case '/flixx-app/shows.html':
       console.log('Shows')
       break
 
-    case '/movie-details.html':
+    case '/flixx-app/movie-details.html':
       console.log('Movie Details')
       break
 
-    case '/tv-details.html':
+    case '/flixx-app/tv-details.html':
       console.log('TV Details')
       break
 
