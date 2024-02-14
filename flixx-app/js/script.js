@@ -1,14 +1,12 @@
 const global = {
   currentPage: window.location.pathname,
 }
-//fetch data from TMDB API
+// fetch data from TMDB API
 async function fetchAPIData(endpoint) {
   const API_KEY = 'a8500c5a90558ec8ae375b1874501089'
   const API_URL = 'https://api.themoviedb.org/3/'
   showSpinner()
-  const response = await fetch(
-    `${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`
-  )
+  const response = await fetch(`${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`)
   const data = await response.json()
   hideSpinner()
   return data
@@ -17,7 +15,7 @@ async function fetchAPIData(endpoint) {
 async function displayPopularMovies() {
   const { results } = await fetchAPIData('movie/popular')
 
-  results.forEach((result) => {
+  results.forEach(result => {
     const div = document.createElement('div')
     div.classList.add('card')
     div.innerHTML = `
@@ -46,7 +44,7 @@ async function displayPopularMovies() {
 async function displayPopularShows() {
   const { results } = await fetchAPIData('tv/popular')
 
-  results.forEach((show) => {
+  results.forEach(show => {
     const div = document.createElement('div')
     div.classList.add('card')
     div.innerHTML = `
@@ -115,18 +113,19 @@ async function displayMovieDetails() {
     <li><span class="text-secondary">Status:</span> ${movie.status}</li>
   </ul>
   <h4>Production Companies</h4>
-  <div class="list-group"> ${movie.production_companies.map((company) => `<span>${company.name}</span>`).join(', ')} </div>
+  <div class="list-group"> ${movie.production_companies
+    .map(company => `<span>${company.name}</span>`)
+    .join(', ')} </div>
 </div>
   `
 
-document.querySelector('section.container').appendChild(div)
-
+  document.querySelector('section.container').appendChild(div)
 }
 
 //highlight active link
 function highlightActiveLink() {
   const links = document.querySelectorAll('.nav-link')
-  links.forEach((link) => {
+  links.forEach(link => {
     if (link.getAttribute('href') === global.currentPage) {
       link.classList.add('active')
     }
@@ -141,8 +140,53 @@ function hideSpinner() {
   document.querySelector('.spinner').classList.remove('show')
 }
 
-function addCommasToNumber(number){
-return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+function addCommasToNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
+
+async function displaySlider() {
+  const { results } = await fetchAPIData('movie/now_playing')
+
+  results.forEach(movie => {
+    const div = document.createElement('div')
+    div.classList.add('swiper-slide')
+    div.innerHTML = `
+
+          <a href="movie-details.html?id=${movie.id}">
+            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+          </a>
+          <h4 class="swiper-rating">
+            <i class="fas fa-star text-secondary"></i> ${movie.vote_average} / 10
+          </h4>
+ 
+    `
+    document.querySelector('.swiper-wrapper').appendChild(div)
+    initSwiper()
+  })
+}
+
+function initSwiper() {
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    freeMode: true,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 2,
+      },
+      700: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+    },
+  })
 }
 
 function init() {
@@ -150,7 +194,9 @@ function init() {
     case '/flixx-app/':
     case '/flixx-app/index.html':
       console.log('home')
+      displaySlider()
       displayPopularMovies()
+
       break
 
     case '/flixx-app/shows.html':
@@ -179,4 +225,3 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init)
-console.log("fuuuuuuck")
