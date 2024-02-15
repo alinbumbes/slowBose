@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" type="module"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <style>
+        /*Varianta lui Alin de css reset and layout */
+        :root {
+            --color-body: #000;
+            --bg-body: #f1f1f1;
+
+            --color-footer: #fff;
+            --bg-footer: #666;
+        }
+
+        html {
+            margin: 0;
+            display: flow-root;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            color: var(--color-body);
+        }
+
+        .ab-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            height: 100dvh;
+
+            & main {
+                background-color: var(--bg-body);
+                margin: 0;
+            }
+        }
+
+
+        /* custom footer */
+
+        footer {
+            background-color: var(--bg-footer);
+            color: var(--color-footer);
+        }
+    </style>
+
+</head>
+
+<body class="ab-layout">
+    <main>
+
+        <!-- start HTML -->
+
+        <div class="container">
+
+            <h2>form submit query params</h2>
+            <p>in acest challenge invatam ca daca setezi un <code>form</code> sa aibe action catre un path si campurile
+                formularului contin atributele name='ceva' si value='fie o valoare declarata, fie valoarea din input
+                scrisa
+                inainte sa apasam submit' siiii evident un element ( <code>a</code> sau <code>button</code> ) cu
+                atributul
+                type='submit', atunci prin magie cand ajungem pe acel path vom avea atasat la link si niste parametrii
+                dupa
+                semnul intrebarii</p>
+            <form action="/daily-challenge/000.html">
+                <!-- end HTML -->
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div>
+                        <div class="card p-3 mb-3 shadow d-flex flex-row align-items-center gap-3">
+                            <input type="text" name="primulCamp" id="input1" class="form-control">
+                            <label for="input1" class="form-label w-100">scrie ceva in primul camp </label>
+                        </div>
+    
+                        <div class="card p-3 mb-3 shadow d-flex flex-row align-items-center gap-3">
+                            <input type="text" name="alDoileaCamp" id="input2" class="form-control">
+                            <label for="input2" class="form-label w-100">completeaza in al doilea camp </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-success">click</button>
+
+            </form>
+        </div>
+
+        <!-- end HTML -->
+
+        <script type="module">
+            'use strict'
+            // start JAVASCRIPT
+
+            console.log('i come from a land down under')
+
+            // end JAVASCRIPT
+        </script>
+    </main>
+    <footer>
+        <div class="container py-3">
+            <div class="d-flex gap-3">
+                <i class="bi bi-c-circle"></i>
+                <span>Copyright Alin</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
