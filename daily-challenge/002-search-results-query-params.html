@@ -62,43 +62,61 @@
         <!-- start HTML -->
 
         <div class="container">
+            <h2>display query params</h2>
+            <p><b>task1:</b> ai ajuns pe pagina asta datorita paginii 002.html unde ai apasat Submit. Acum in url ul paginii ai niste query params pe care vreau sa-i extragi din url si sa-i afisezi intr-un obiect in consola. 
+            </p>
 
-            <h2>form submit query params</h2>
-            <p>in acest challenge invatam ca daca setezi un <code>form</code> sa aibe action catre un path si campurile formularului contin atributele name='ceva' si value='fie o valoare declarata,
-                fie valoarea din input scrisa inainte sa apasam submit' siiii evident un element ( <code>a</code> sau <code>button</code> ) cu atributul type='submit', atunci prin magie cand ajungem
-                pe acel path vom avea atasat la link si niste parametrii dupa semnul intrebarii</p>
-            <form action="/daily-challenge/002-search-results-query-params.html">
-                <!-- end HTML -->
-                <div class="d-flex flex-column align-items-center justify-content-center">
-                    <div>
-                        <div class="card p-3 mb-3 shadow d-flex flex-row align-items-center gap-3">
-                            <input type="text" name="primulCamp" id="input1" class="form-control">
-                            <label for="input1" class="form-label w-100">scrie ceva in primul camp </label>
-                        </div>
+            <p><b>task2:</b> Cand ai terminat cu asta, afiseaza acesti parametri si in tabelul de mai jos. </p>
+            <table class="table table-hover shadow">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                        <div class="card p-3 mb-3 shadow d-flex flex-row align-items-center gap-3">
-                            <input type="text" name="alDoileaCamp" id="input2" class="form-control">
-                            <label for="input2" class="form-label w-100">completeaza in al doilea camp </label>
-                        </div>
-                    </div>
+                    <!-- AICI TREBUIE sa injectezi cate un <tr> si doua <td>  continand ce este in URL ul paginii dupa semnul intrebarii. iata un exemplu, decomenteaza-l sa vezi cum arata -->
+                    <!-- 
+                    <tr>
+                        <td>primulCamp</td>
+                        <td>test123</td>
+                    </tr>
 
-                     <button type="submit" class="btn btn-lg btn-success px-5">Submit</button>
+                    <tr>
+                        <td>alDoileaCamp</td>
+                        <td>test456</td>
+                    </tr> -->
+                </tbody>
+            </table>
 
-                </div>
-
-
-               
-            </form>
         </div>
-
         <!-- end HTML -->
 
         <script type="module">
             'use strict'
             // start JAVASCRIPT
 
-            console.log('i come from a land down under')
+            //subchallenge 1: display in a console.log an OBJECT containing key value pairs from the url parameters
+            const urlParameters = new URLSearchParams(window.location.search)
 
+            const paramObj = () => {
+                const obj = {}
+               //CLAUDIA: PUNE AICI SOLUTIA TA
+                return obj
+            }
+
+            console.log(paramObj())
+
+            //subchallenge 2: display on the page the keys and values in a nice table with one column for keys and another for values
+
+            function createTableFromParams() {
+                const tableBody = document.querySelector('tbody')
+
+               //CLAUDIA: PUNE AICI SOLUTIA TA
+            }
+
+            createTableFromParams()
             // end JAVASCRIPT
         </script>
     </main>
