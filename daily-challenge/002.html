@@ -66,8 +66,10 @@
             <h2>form submit query params</h2>
             <p>in acest challenge invatam ca daca setezi un <code>form</code> sa aibe action catre un path si campurile formularului contin atributele name='ceva' si value='fie o valoare declarata,
                 fie valoarea din input scrisa inainte sa apasam submit' siiii evident un element ( <code>a</code> sau <code>button</code> ) cu atributul type='submit', atunci prin magie cand ajungem
-                pe acel path vom avea atasat la link si niste parametrii dupa semnul intrebarii</p>
-            <form action="/daily-challenge/002-search-results-query-params.html">
+                pe acel path vom avea atasat la URL si niste parametrii dupa semnul intrebarii</p>
+
+           
+            <form action="/daily-challenge/002-search-results-query-params.html" class="mb-4">
                 <!-- end HTML -->
                 <div class="d-flex flex-column align-items-center justify-content-center">
                     <div>
@@ -82,13 +84,17 @@
                         </div>
                     </div>
 
-                     <button type="submit" class="btn btn-lg btn-success px-5">Submit</button>
+                    <button type="submit" class="btn btn-lg btn-success px-5">Submit</button>
 
                 </div>
 
 
-               
-            </form>
+
+            </form> 
+            
+            <p><b>nota de subsol:</b> ai grija ca pe local aceste 2 fisiere ( <code>002.html</code> si <code>002-search-results-query-params.html</code> ) nu se vor lega bine, va trebui sa modifici
+                path ul la <code>form action="/daily-challenge/002-search-results-query-params.html"</code> in <code>form action="/002-search-results-query-params.html"</code> daca le creezi ca 2
+                fisiere html pe Desktop</p>
         </div>
 
         <!-- end HTML -->
