@@ -6,13 +6,15 @@ const global = {
     page: 1,
     totalPages: 1,
   },
+  api: {
+    apiKey: 'a8500c5a90558ec8ae375b1874501089',
+    apiUrl: 'https://api.themoviedb.org/3/'
+  }
 }
 // fetch data from TMDB API
 async function fetchAPIData(endpoint) {
-  const API_KEY = 'a8500c5a90558ec8ae375b1874501089'
-  const API_URL = 'https://api.themoviedb.org/3/'
   showSpinner()
-  const response = await fetch(`${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`)
+  const response = await fetch(`${global.api.apiUrl}${endpoint}?api_key=${global.api.apiKey}&language=en-US`)
   const data = await response.json()
   hideSpinner()
   return data

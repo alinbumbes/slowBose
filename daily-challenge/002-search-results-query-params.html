@@ -115,7 +115,11 @@
 
             const paramObj = () => {
                 const obj = {}
-                //CLAUDIA SCRIE COD AICI
+
+                //rezolvare
+                for (let [key, value] of urlParameters.entries()) {
+                    obj[key] = value
+                }
                 return obj
             }
 
@@ -125,8 +129,17 @@
 
             function createTableFromParams() {
                 const tableBody = document.querySelector('tbody')
-                //CLAUDIA SCRIE COD AICI
-
+                //rezolvare
+                for (let [key, value] of Object.entries(paramObj())) {
+                    const keyTd = document.createElement('td')
+                    keyTd.innerText = key
+                    const valueTd = document.createElement('td')
+                    valueTd.innerText = value
+                    const trParams = document.createElement('tr')
+                    trParams.appendChild(keyTd)
+                    trParams.appendChild(valueTd)
+                    tableBody.appendChild(trParams)
+                }
             }
 
             createTableFromParams()
