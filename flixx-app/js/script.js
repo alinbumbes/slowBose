@@ -1,5 +1,11 @@
 const global = {
   currentPage: window.location.pathname,
+  search: {
+    term: '',
+    type: '',
+    page: 1,
+    totalPages: 1,
+  },
 }
 // fetch data from TMDB API
 async function fetchAPIData(endpoint) {
@@ -10,6 +16,19 @@ async function fetchAPIData(endpoint) {
   const data = await response.json()
   hideSpinner()
   return data
+}
+
+async function search() {
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  global.search.type = urlParams.get('type')
+  global.search.term = urlParams.get('search-term')
+
+  if (global.search.term !== '' && global.search.term !== null) {
+    //@todo make request and display results
+  } else {
+    showAlert('enter search term , asshole')
+  }
 }
 
 async function displayPopularMovies() {
@@ -140,6 +159,16 @@ function hideSpinner() {
   document.querySelector('.spinner').classList.remove('show')
 }
 
+//show Alert
+function showAlert(message, className) {
+  const alertEl = document.createElement('div')
+  alertEl.classList.add('alert', 'alert-danger')
+  alertEl.appendChild(document.createTextNode(message))
+  document.querySelector('#alert').appendChild(alertEl)
+
+  setTimeout(()=> alertEl.remove() ,3000)
+}
+
 function addCommasToNumber(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
@@ -215,6 +244,7 @@ function init() {
 
     case '/flixx-app/search.html':
       console.log('Search')
+      search()
       break
 
     default:

@@ -64,11 +64,22 @@
         <div class="container">
             <h2>display query params</h2>
             <p><b>task1:</b> ai ajuns pe pagina asta datorita paginii 002.html unde ai apasat Submit. Acum in url ul paginii ai niste query params pe care vreau sa-i extragi din url si sa-i afisezi
-                intr-un obiect in consola.
+                intr-un obiect in consola. <br> <br>
+
+                Ce dracu sunt aia query params ? hai sa studiem URL ul paginii : <br><br>
+                <code>https://ab-learning.netlify.app/daily-challenge/002-search-results-query-params.html?primulCamp=ANA+ARE+MERE&alDoileaCamp=CATE+MERE+ARE+ANA</code> <br>
+
+                deci URL ul nostru este compus din <br><br>
+                <code>https://ab-learning.netlify.app/daily-challenge/002-search-results-query-params.html </code><br><br>
+                plus acesti parametri dupa semnul intrebarii: <br><br>
+                <span class="text-primary">?primulCamp=ANA+ARE+MERE&alDoileaCamp=CATE+MERE+ARE+ANA</span> <br><br>
+                parametrii sunt separati prin simbolul '<code>&</code>' . Am pus deja in script acea proprietate care ne returneaza un obiect iterabil cu parametrii astia numita URLSearchParam
+
+
             </p>
 
             <p><b>task2:</b> Cand ai terminat cu asta, afiseaza acesti parametri si in tabelul de mai jos. </p>
-        
+
             <table class="table table-hover shadow">
                 <thead>
                     <tr>
@@ -104,7 +115,7 @@
 
             const paramObj = () => {
                 const obj = {}
-                //CLAUDIA: PUNE AICI SOLUTIA TA
+                //CLAUDIA SCRIE COD AICI
                 return obj
             }
 
@@ -114,8 +125,8 @@
 
             function createTableFromParams() {
                 const tableBody = document.querySelector('tbody')
+                //CLAUDIA SCRIE COD AICI
 
-                //CLAUDIA: PUNE AICI SOLUTIA TA
             }
 
             createTableFromParams()
