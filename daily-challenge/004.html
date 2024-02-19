@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" type="module" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <style>
+        /*Varianta lui Alin de css reset and layout */
+        :root {
+            --color-body: #000;
+            --bg-body: #f1f1f1;
+
+            --color-footer: #fff;
+            --bg-footer: #666;
+        }
+
+        html {
+            margin: 0;
+            display: flow-root;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            color: var(--color-body);
+        }
+
+        .ab-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            height: 100dvh;
+
+            & main {
+                background-color: var(--bg-body);
+                margin: 0;
+            }
+        }
+
+
+        /* custom footer */
+
+        footer {
+            background-color: var(--bg-footer);
+            color: var(--color-footer);
+        }
+    </style>
+
+</head>
+
+<body class="ab-layout">
+    <main>
+
+        <!-- start HTML -->
+
+        <div class="container">
+            <h2>Clock in Canvas</h2>
+
+            <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000"></canvas>
+        </div>
+
+        <!-- end HTML -->
+
+        <script type="module">
+            'use strict'
+            // start JAVASCRIPT
+
+            function clock() {
+  const now = new Date();
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+
+  // Setup canvas
+  ctx.save(); // save the default state
+  ctx.clearRect(0, 0, 500, 500);
+  ctx.translate(250, 250); // Put 0,0 in the middle
+  ctx.rotate(-Math.PI / 2); // Rotate clock -90deg
+
+  // Set default styles
+  ctx.strokeStyle = '#000000';
+  ctx.fillStyle = '#f4f4f4';
+  ctx.lineWidth = 5;
+  ctx.lineCap = 'round';
+
+  // Draw clock face/border
+  ctx.save();
+  ctx.beginPath();
+  ctx.lineWidth = 14;
+  ctx.strokeStyle = '#800000';
+  ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+  ctx.stroke();
+  ctx.fill();
+  ctx.restore();
+
+  // Draw hour lines
+  ctx.save();
+  for (let i = 0; i < 12; i++) {
+    ctx.beginPath();
+    ctx.rotate(Math.PI / 6);
+    ctx.moveTo(100, 0);
+    ctx.lineTo(120, 0);
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  // Draw minute lines
+  ctx.save();
+  ctx.lineWidth = 4;
+  for (let i = 0; i < 60; i++) {
+    if (i % 5 !== 0) {
+      ctx.beginPath();
+      ctx.moveTo(117, 0);
+      ctx.lineTo(120, 0);
+      ctx.stroke();
+    }
+    ctx.rotate(Math.PI / 30);
+  }
+  ctx.restore();
+
+  // Get current time
+  const hr = now.getHours() % 12;
+  const min = now.getMinutes();
+  const sec = now.getSeconds();
+
+  // console.log(`${hr}:${min}:${sec}`);
+
+  // Draw hour hand
+  ctx.save();
+  ctx.rotate(
+    (Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec
+  );
+  ctx.strokeStyle = '#800000';
+  ctx.lineWidth = 14;
+  ctx.beginPath();
+  ctx.moveTo(-20, 0);
+  ctx.lineTo(80, 0);
+  ctx.stroke();
+  ctx.restore();
+
+  // Draw min hand
+  ctx.save();
+  ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec);
+  ctx.strokeStyle = '#800000';
+  ctx.lineWidth = 10;
+  ctx.beginPath();
+  ctx.moveTo(-28, 0);
+  ctx.lineTo(112, 0);
+  ctx.stroke();
+  ctx.restore();
+
+  // Draw sec hand
+  ctx.save();
+  ctx.rotate((sec * Math.PI) / 30);
+  ctx.strokeStyle = '#FF7F50';
+  ctx.fillStyle = '#FF7F50';
+  ctx.lineWidth = 6;
+  ctx.beginPath();
+  ctx.moveTo(-30, 0);
+  ctx.lineTo(100, 0);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, 10, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.restore();
+
+  ctx.restore(); // restore default state
+
+  requestAnimationFrame(clock);
+}
+
+requestAnimationFrame(clock);
+
+            // end JAVASCRIPT
+        </script>
+    </main>
+    <footer>
+        <div class="container py-3">
+            <div class="d-flex gap-3">
+                <i class="bi bi-c-circle"></i>
+                <span>Copyright Alin</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

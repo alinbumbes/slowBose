@@ -5,16 +5,28 @@ const global = {
     type: '',
     page: 1,
     totalPages: 1,
+    totalResults: 0,
   },
   api: {
     apiKey: 'a8500c5a90558ec8ae375b1874501089',
-    apiUrl: 'https://api.themoviedb.org/3/'
-  }
+    apiUrl: 'https://api.themoviedb.org/3/',
+  },
 }
 // fetch data from TMDB API
 async function fetchAPIData(endpoint) {
   showSpinner()
   const response = await fetch(`${global.api.apiUrl}${endpoint}?api_key=${global.api.apiKey}&language=en-US`)
+  const data = await response.json()
+  hideSpinner()
+  return data
+}
+
+//fetch data based on a query
+async function searchAPIData() {
+  showSpinner()
+  const response = await fetch(
+    `${global.api.apiUrl}search/${global.search.type}?query=${global.search.term}&api_key=${global.api.apiKey}`
+  )
   const data = await response.json()
   hideSpinner()
   return data
@@ -27,10 +39,61 @@ async function search() {
   global.search.term = urlParams.get('search-term')
 
   if (global.search.term !== '' && global.search.term !== null) {
-    //@todo make request and display results
+    const { results, total_pages, page, total_results } = await searchAPIData()
+    global.search.page = page
+    global.search.totalResults = total_results
+    global.search.totalPages = total_pages
+
+    if (results.length === 0) showAlert('no result found')
+    displaySearchResults(results)
+
+    document.querySelector('#search-term').value = ''
   } else {
-    showAlert('enter search term , asshole')
+    showAlert('enter search term , dude')
   }
+}
+
+//create search result based on json data coming from server
+function displaySearchResults(res) {
+  res.forEach(result => {
+    const div = document.createElement('div')
+    div.classList.add('card')
+    div.innerHTML = `
+          <a href="${global.search.type}-details.html?id=${result.id}">
+          ${
+            result.poster_path
+              ? `<img src="https://image.tmdb.org/t/p/w500/${result.poster_path}" class="card-img-top" alt="${result.name}" />`
+              : `<img src="images/no-image.jpg" class="card-img-top"  alt="Movie Title" />`
+          }
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">${global.search.type === 'movie' ? result.title : result.name}</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: ${
+                global.search.type === 'movie' ? result.release_date : result.first_air_date
+              }</small>
+            </p>
+          </div> 
+`
+    document.querySelector('#search-results-heading').innerHTML = `
+      <h2>${res.length} of ${global.search.totalResults} results for ${global.search.term}</h2>
+      `
+    document.querySelector('#search-results').appendChild(div)
+  })
+  displayPagination()
+}
+
+function displayPagination() {
+  const div = document.createElement('div')
+  div.classList.add('pagination')
+  div.innerHTML = `
+        <button class="btn btn-primary" id="prev">Prev</button>
+        <button class="btn btn-primary" id="next">Next</button>
+        <div class="page-counter">Page ${global.search.page} of ${global.search.totalPages}</div>
+  
+  `
+
+  document.querySelector('#pagination').appendChild(div)
 }
 
 async function displayPopularMovies() {
@@ -168,7 +231,7 @@ function showAlert(message, className) {
   alertEl.appendChild(document.createTextNode(message))
   document.querySelector('#alert').appendChild(alertEl)
 
-  setTimeout(()=> alertEl.remove() ,3000)
+  setTimeout(() => alertEl.remove(), 3000)
 }
 
 function addCommasToNumber(number) {
