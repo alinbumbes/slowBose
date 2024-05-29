@@ -1,49 +1,3 @@
-var a = 1;
-console.log(a);
-
-// >2015 ES6 let + const
-// var este function scoped
-// let este block scoped
-//
-var x = 2;
-
-function fc() {
-  let sum = 2 + x;
-  if (sum > 1) {
-    var c = 5;
-  }
-  console.log(c);
-}
-fc();
-
-//var este hoisted. let si const nu este hoisted
-console.log(b);
-var b = 5;
-
-let arr = [2, 3, [4, 5]];
-for (let i = 0; i < arr.length; i++) {
-  if (typeof arr[i] == "number") {
-    console.log(arr[i] + 1);
-  } else {
-    for (let j = 0; j < arr[i].length; j++) {
-      console.log(arr[i][j] + 1);
-    }
-  }
-}
-
-let arr2 = [...arr.flat(), 9];
-console.log(arr2);
-
-// let arr3 = [ ...arr, 9]
-// console.log(arr3)
-
-const obj = {
-  a: 2,
-  b: function () {
-    console.log(this.a);
-  },
-};
-obj.b();
 
 const user = {
   name: "gigiel",
@@ -59,13 +13,13 @@ const user = {
 
 //ex 1:
 // afisez in consola stringul. Asta e toata rezolvarea.
-console.log(`Atributiile lui gigiel sunt: ${user.atributions.join(", ")}`);
+console.log(`Ex1: Atributiile lui gigiel sunt: ${user.atributions.join(", ")}`);
 
 //  EXTRA BONUS: pun rezultatul intr-o functie ca sa o apelam ulterior
-function getAttr() {
-  return `Atributiile lui gigiel sunt: ${user.atributions.join(", ")}`;
-}
-console.log(getAttr());
+// function getAttr() {
+//   return `Atributiile lui gigiel sunt: ${user.atributions.join(", ")}`;
+// }
+// console.log(getAttr());
 
 // ------------------------------------------
 // iterez prin proprietatile obiectului (user e un obiect, dar user.accessCodes e si el un obiect in obiect)
@@ -77,7 +31,8 @@ const getAccessCodes = () => {
   }
   return list;
 };
-console.log(getAccessCodes());
+console.log(`\nEx1.1:`);
+console.log(getAccessCodes())
 // ------------------------------------------
 
 const userData = {
@@ -137,24 +92,25 @@ const userData = {
 };
 
 // ex2: iterez prin obiect si returnez date
-
-const companyStartDate = () => {};
+console.log('\nEx 2:')
+const companyStartDate = () => {
+    for(let job in userData.workExperience){
+        console.log(userData.workExperience[job].startDate)
+    }
+};
 
 companyStartDate();
-
+console.log('\nEx 2.1:')
 //ex 2.1: afisez si numele companiei, si cand a inceput munca acolo. deci valori din company si startDate
 
 const getCompanyAndStartDate = () => {
   let message = ``;
   for (let job in userData.workExperience) {
-    console.log(userData.workExperience[job])
-    console.log(`--------------------`);
-
     for (let [key, value] of Object.entries(userData.workExperience[job])) {
       message += `${key} : ${value} \n\n`;
-    }
-   
-  } return message;
+    } 
+  } 
+  return message;
 };
 
 console.log(getCompanyAndStartDate());
