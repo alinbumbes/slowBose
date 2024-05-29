@@ -124,6 +124,7 @@ const userData = {
       "Reading",
       "Hiking",
       "Photography",
-      "Traveling"
+      "Traveling",
+      "Traveling2",
     ]
-  };
+  }
