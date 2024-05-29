@@ -31,34 +31,54 @@ for (let i = 0; i < arr.length; i++) {
   }
 }
 
-
-
-let arr2 = [...arr.flat(), 9]
-console.log(arr2)
+let arr2 = [...arr.flat(), 9];
+console.log(arr2);
 
 // let arr3 = [ ...arr, 9]
 // console.log(arr3)
 
 const obj = {
-a : 2,
-b : function(){
-    console.log(this.a)
-}
-}
+  a: 2,
+  b: function () {
+    console.log(this.a);
+  },
+};
 obj.b();
 
 const user = {
-    name: 'gigiel',
-    occupation: 'frecator de menta',
-    company: 'ING backoffice',
-    atributions: ['spalator', 'instalator', 'electrician', 'secretar'],
-    accessCodes: {
-        'ganitor': 24,
-        'security': 46,
-        'level': 78
-    }
-}
+  name: "gigiel",
+  occupation: "frecator de menta",
+  company: "ING backoffice",
+  atributions: ["spalator", "instalator", "electrician", "secretar"],
+  accessCodes: {
+    ganitor: 24,
+    security: 46,
+    level: 78,
+  },
+};
 
+//ex 1:
+// afisez in consola stringul. Asta e toata rezolvarea.
+console.log(`Atributiile lui gigiel sunt: ${user.atributions.join(", ")}`);
+
+//  EXTRA BONUS: pun rezultatul intr-o functie ca sa o apelam ulterior
+function getAttr() {
+  return `Atributiile lui gigiel sunt: ${user.atributions.join(", ")}`;
+}
+console.log(getAttr());
+
+// ------------------------------------------
+// iterez prin proprietatile obiectului (user e un obiect, dar user.accessCodes e si el un obiect in obiect)
+// si returnez un array cu toate valorile lui
+const getAccessCodes = () => {
+  const list = [];
+  for (let code in user.accessCodes) {
+    list.push(user.accessCodes[code]); // asta [] e a 2a metoda de a apela un obiect, prima e cu punct (obj.key)
+  }
+  return list;
+};
+console.log(getAccessCodes());
+// ------------------------------------------
 
 const userData = {
     personalInfo: {
