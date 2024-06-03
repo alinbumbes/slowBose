@@ -103,9 +103,63 @@ companyStartDate();
 console.log('\nEx 2.1:')
 //ex 2.1: afisez si numele companiei, si cand a inceput munca acolo. deci valori din company si startDate
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const getCompanyAndStartDate = () => {
   let message = ``;
   for (let job in userData.workExperience) {
+//aici iteram prin valoarea proprietatii 'workExperience' din obiectul 'userData'
+//userData.workExperience contine 1 array cu 2 obiecte.
+//cu 'for (let job in userData.workExperience)' iteram prin acel array cu 2 obiecte.
+// ce inseamna sa iteram ?in prima iteratie variabila job = 0.
+// a doua iteratie, variabila job =  1
+// a 3a iteratie nu va mai exista pentru ca structura for...in trece printr-un array 
+//de atatea ori cat este lungimea array-ului. 
+//(array.length() = 2, atunci si for...in trece de 2 ori prin userData.workExperience)
+
+//in prima iteratie ajungem la al 2lea for, care e un for...of. citeste diferentele pe MDN
+//acest for STIE de existenta variabilei 'job' de mai sus. 
+//noi vrem sa trecem prin tot obiectul care se afla la pozitia userData.workExperience[job].
+//deci in prima iteratie job= 0 si noi vrem  cu for ul de jos sa trecem prin :
+// OBIECTUL care se afla la pozitia 0: adica userData.workExperience[0], deci prima pozitie
+// cum iteram printr-un obiect daca obiectele NU SUNT ITERABILE? Object.entries().
+// deci Object.entries() transforma orice obiect intr-un array de array uri. 
+// const obj1 = {a:0, b:1}
+//Object.entries(obj1) returneaza : [[a, 0], [b, 1]] . deci un array de array uri.
+// de ce vrem sa transformam un obiect intr-un array de array uri ? 
+//ca sa putem itera prin el cu for.
+
+console.log(userData.workExperience[job])
+// console.log(userData.workExperience[0])
     for (let [key, value] of Object.entries(userData.workExperience[job])) {
       message += `${key} : ${value} \n\n`;
     } 
